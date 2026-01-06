@@ -1,0 +1,25 @@
+package com.schedule.seecs;
+
+import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        WebView webView = new WebView(this);
+        setContentView(webView);
+
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+
+        webView.loadUrl(
+            "https://script.google.com/macros/s/AKfycbwgHeIWRShpbBV_Sbmmn9h-RctF0gY5ZzSGIL-ZfBJbYznkoRSJx3MPhjLnOdA4Ey5Jnw/exec"
+        );
+    }
+}
